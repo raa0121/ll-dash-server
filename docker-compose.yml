@@ -21,16 +21,5 @@ services:
     ports:
       - 5000:5000
     restart: always
-  cache-server:
-    image: varnish
-    container_name: cache-server
-    hostname: cache-server
-    ports:
-      - 80:80
-    restart: always
-    tmpfs:
-      - /var/lib/varnish:exec
-    volumes:
-      - ./conf/default.vcl:/etc/varnish/default.vcl
 volumes:
   dash-data: {}
